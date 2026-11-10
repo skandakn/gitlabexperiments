@@ -1,593 +1,720 @@
-# Visvesvaraya Technological University (VTU)
-## Department of Computer Science & Engineering
-### **BCS358C: Project Management with Git**
+# BANGALORE INSTITUTE OF TECHNOLOGY (BIT)
+### K.R. Road, V.V. Puram, Bengaluru - 560004
+### **Department of Computer Science & Engineering**
+#### **Course: Project Management with GIT (BCSL307A / BCS358C)**
 
 ---
 
-### **Student & Repository Information**
-* **Institution:** Bangalore Institute of Technology (BIT), Bengaluru
+### **Student Credentials**
 * **Student Name:** Skanda K N
-* **GitHub Profiles:** [@skandakn](https://github.com/skandakn) (Primary) | [@skandaknbit](https://github.com/skandaknbit) (College)
-* **Repository:** `BCS358C-Project-Management-with-Git`
-* **Semester / Scheme:** 3rd Semester B.E. (2022 Scheme)
+* **USN:** 1BI25CS252
+* **Terminal Identifier:** `skandakn1BI25CS252@1BI25CS252-Skanda`
+* **Semester & Section:** 3rd Semester B.E. (CSE)
+* **GitHub Profile:** [@skandaknbit](https://github.com/skandaknbit)
+* **Repository Link:** [https://github.com/skandaknbit/BCS358C-Project-Management-with-Git](https://github.com/skandaknbit/BCS358C-Project-Management-with-Git)
 
 ---
 
-## **Table of Experiments**
+## **INDEX OF EXPERIMENTS**
 
-| No. | Experiment Title | Execution Screenshot | Directory Link |
+| Exp No. | Experiment Title | Directory | Terminal Screenshot |
 |:---:|:---|:---:|:---:|
-| 1 | Setting Up Git and Basic Commands | [View](screenshots/exp01_setup_and_basic_commands.png) | [exp01](experiments/exp01_setup_and_basic_commands/) |
-| 2 | Creating and Managing Branches | [View](screenshots/exp02_creating_managing_branches.png) | [exp02](experiments/exp02_creating_managing_branches/) |
-| 3 | Branch Stashing | [View](screenshots/exp03_branch_stashing.png) | [exp03](experiments/exp03_branch_stashing/) |
-| 4 | Collaboration & Remote Repositories (Cloning) | [View](screenshots/exp04_git_clone_remote.png) | [exp04](experiments/exp04_git_clone_remote/) |
-| 5 | Remote Repositories (Creation and Linking) | [View](screenshots/exp05_remote_repo_push.png) | [exp05](experiments/exp05_remote_repo_push/) |
-| 6 | Fetching and Rebasing | [View](screenshots/exp06_fetching_and_rebasing.png) | [exp06](experiments/exp06_fetching_and_rebasing/) |
-| 7 | Merging with Custom Messages | [View](screenshots/exp07_merging_custom_messages.png) | [exp07](experiments/exp07_merging_custom_messages/) |
-| 8 | Git Tags and Releases | [View](screenshots/exp08_git_tags_releases.png) | [exp08](experiments/exp08_git_tags_releases/) |
-| 9 | Advanced Git Operations (Cherry-Picking) | [View](screenshots/exp09_cherry_picking.png) | [exp09](experiments/exp09_cherry_picking/) |
-| 10 | Analyzing Git History (Filtering by Author & Date) | [View](screenshots/exp10_analyzing_git_history_author_date.png) | [exp10](experiments/exp10_analyzing_git_history_author_date/) |
-| 11 | Analyzing Git History (Displaying Last N Commits) | [View](screenshots/exp11_analyzing_git_history_last_n_commits.png) | [exp11](experiments/exp11_analyzing_git_history_last_n_commits/) |
-| 12 | Undoing Changes and Reverting Commits | [View](screenshots/exp12_undoing_changes_reverting_commits.png) | [exp12](experiments/exp12_undoing_changes_reverting_commits/) |
-| 13 | *(Bonus)* Merge Conflict Resolution | [View](screenshots/exp13_merge_conflict_resolution.png) | [exp13](experiments/exp13_merge_conflict_resolution/) |
+| **1** | Setting Up and Basic Commands | `exp1/` | [exp1.png](screenshots/exp1.png) |
+| **2** | Creating and Managing Branches | `exp2/` | [exp2.png](screenshots/exp2.png) |
+| **3** | Stashing Changes | `exp3/` | [exp3.png](screenshots/exp3.png) |
+| **4** | Collaboration & Remote Repositories (Cloning) | `exp4/` | [exp4.png](screenshots/exp4.png) |
+| **5** | Fetching and Rebasing | `exp5/` | [exp5.png](screenshots/exp5.png) |
+| **6** | Collaboration & Merging with Custom Commit Messages | `exp6/` | [exp6.png](screenshots/exp6.png) |
+| **7** | Git Tags and Releases | `exp7/` | [exp7.png](screenshots/exp7.png) |
 
 ---
 
-## **Experiment 1: Setting Up Git and Basic Commands**
+## **Experiment 1. Setting Up and Basic Commands**
 
-### **Aim**
-To initialize a new Git repository, track a file through the staging area, and commit changes with a meaningful commit message.
+### **Aim / Problem Statement:**
+Initialize a new Git repository in a dedicated directory. Create a new file, add it to the staging area, and commit the changes with an appropriate commit message.
 
-### **Commands**
-```bash
-git init
-git config user.name "Skanda K N"
-git config user.email "skandakn13@gmail.com"
-echo "Welcome to VTU Git Lab (BCS358C)" > sample.txt
-git status
-git add sample.txt
-git commit -m "Experiment 1: Initial commit with sample.txt"
-git log --oneline
-```
+### **Theoretical Concept:**
+Git is a distributed version control system that records changes to a file or set of files over time. In Git:
+* `git init` creates the local `.git` subdirectory containing metadata and object databases.
+* `git config` sets the committer identity used across all commits.
+* The **Working Directory** holds untracked or modified files on disk.
+* The **Staging Area (Index)** buffers snapshots before finalizing them into permanent history via `git commit`.
 
-### **Terminal Output**
+---
+
+### **Step-by-Step Procedure:**
+
+#### **Step 1: Create a separate directory for the experiment**
+$ mkdir exp1
+
+#### **Step 2: Navigate into the project folder**
+$ cd exp1
+
+#### **Step 3: Initialize the Git repository**
+$ git init
+
+#### **Step 4: Configure user credentials globally**
+$ git config --global user.name "Skanda K N (1BI25CS252)"
+$ git config --global user.email "skandakn13@gmail.com"
+
+#### **Step 5: Create a new sample file**
+$ echo "Hi, this is Skanda K N (1BI25CS252)" > sample.txt
+
+#### **Step 6: Display file contents to verify creation**
+$ cat sample.txt
+
+#### **Step 7: Add the file to the staging area (Index)**
+$ git add sample.txt
+
+#### **Step 8: Commit the staged file with an intention message**
+$ git commit -m "Initial commit"
+
+#### **Step 9: Verify the working tree status**
+$ git status
+
+#### **Step 10: View the chronological commit log in compressed single-line format**
+$ git log --oneline
+
+---
+
+### **Terminal Output:**
 ```text
-Initialized empty Git repository in /home/skanda/bitskanda/.git/
-On branch master
-No commits yet
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	sample.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-[master (root-commit) 7a91fc2] Experiment 1: Initial commit with sample.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ mkdir exp1
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ cd exp1
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ git init
+Initialized empty Git repository in /home/skandakn1BI25CS252/skanda252/exp1/.git/
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ git config --global user.name "Skanda K N (1BI25CS252)"
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ git config --global user.email "skandakn13@gmail.com"
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ echo "Hi, this is Skanda K N (1BI25CS252)" > sample.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ cat sample.txt
+Hi, this is Skanda K N (1BI25CS252)
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ git add sample.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ git commit -m "Initial commit"
+[master (root-commit) 5d7b6d5] Initial commit
  1 file changed, 1 insertion(+)
  create mode 100644 sample.txt
-7a91fc2 (HEAD -> master) Experiment 1: Initial commit with sample.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ git status
+On branch master
+nothing to commit, working tree clean
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp1$ git log --oneline
+5d7b6d5 (HEAD -> master) Initial commit
 ```
 
-### **Execution Screenshot**
+### **Execution Screenshot:**
 <div align="center">
-  <img src="screenshots/exp01_setup_and_basic_commands.png" alt="Experiment 1: Setting Up Git and Basic Commands" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+  <img src="screenshots/exp1.png" alt="Experiment 1 Execution" width="900px" style="border:1px solid #555; border-radius:6px;"/>
 </div>
-
-### **Outcome & Inference**
-Successfully initialized a Git repository, staged an untracked file, and created the root commit in the master branch.
 
 ---
 
-## **Experiment 2: Creating and Managing Branches**
+## **Experiment 2. Creating and Managing Branches**
 
-### **Aim**
-To create a new branch named 'feature-branch', switch between branches, make isolated changes, and merge 'feature-branch' into 'master' using fast-forward merge.
+### **Aim / Problem Statement:**
+Create a new branch named "feature-branch". Switch to the "master/main" branch. Merge the "feature-branch" into "master/main".
 
-### **Commands**
-```bash
-cd bitskanda/
-tree
-gedit mainfile.txt
-git add mainfile.txt
-git commit -m "Initial commit on master"
-git checkout -b feature-branch
-git branch
-echo "new feature content">feature.txt
-git add feature.txt
-git commit -m "add feature.txt to feature-branch"
-git checkout master
-git merge feature-branch
-git log --oneline --graph
-ls
-```
+### **Theoretical Concept:**
+Branches in Git are lightweight pointers to specific commits. Creating a branch allows developers to isolate experimental features or bug fixes without impacting the stable production codebase (`master`/`main`). When feature development is complete and verified, merging integrates the isolated branch commits back into the target base branch.
 
-### **Terminal Output**
+---
+
+### **Step-by-Step Procedure:**
+
+#### **Step 1: Create a separate directory for the experiment**
+$ mkdir exp2
+
+#### **Step 2: Navigate into the directory**
+$ cd exp2
+
+#### **Step 3: Initialize the Git repository**
+$ git init
+
+#### **Step 4: Switch to or establish the master branch**
+$ git checkout -b master
+
+#### **Step 5: Create a baseline file on master**
+$ echo "Initial content on master" > mainfile.txt
+
+#### **Step 6: Stage and commit the baseline file**
+$ git add mainfile.txt
+$ git commit -m "Initial commit on master"
+
+#### **Step 7: Create a new branch named 'feature-branch'**
+$ git branch feature-branch
+
+#### **Step 8: Switch to the newly created feature-branch**
+$ git checkout feature-branch
+
+#### **Step 9: Create and write new feature content**
+$ echo "New feature content" > feature.txt
+
+#### **Step 10: Stage and commit the feature file on feature-branch**
+$ git add feature.txt
+$ git commit -m "Add feature.txt on feature-branch"
+
+#### **Step 11: Switch back to the master branch**
+$ git checkout master
+
+#### **Step 12: Merge feature-branch into master**
+$ git merge feature-branch
+
+#### **Step 13: View the commit graph and verify files**
+$ git log --oneline --graph
+$ ls
+
+---
+
+### **Terminal Output:**
 ```text
-.
-├── mainfile.txt
-├── myfile.txt
-└── myfile.txt~
-
-1 directory, 3 files
-[master a11b28b] Initial commit on master
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ mkdir exp2
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ cd exp2
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git init
+Initialized empty Git repository in /home/skandakn1BI25CS252/skanda252/exp2/.git/
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git checkout -b master
+Switched to a new branch 'master'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ echo "Initial content on master" > mainfile.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git add mainfile.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git commit -m "Initial commit on master"
+[master (root-commit) a3a0257] Initial commit on master
  1 file changed, 1 insertion(+)
  create mode 100644 mainfile.txt
-Switched to a new branch 'feature-branch'
-* feature-branch
-  master
-[feature-branch 537ebae] add feature.txt to feature-branch
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git branch feature-branch
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git checkout feature-branch
+Switched to branch 'feature-branch'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ echo "New feature content" > feature.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git add feature.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git commit -m "Add feature.txt on feature-branch"
+[feature-branch 1beee55] Add feature.txt on feature-branch
  1 file changed, 1 insertion(+)
  create mode 100644 feature.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git checkout master
 Switched to branch 'master'
-Updating a11b28b..537ebae
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git merge feature-branch
+Updating a3a0257..1beee55
 Fast-forward
  feature.txt | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 feature.txt
-* 537ebae (HEAD -> master, feature-branch) add feature.txt to feature-branch
-* a11b28b Initial commit on master
-* cb9e758 1st commit: add myfile.txt
-feature.txt  mainfile.txt  mainfile.txt~  myfile.txt  myfile.txt~
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ git log --oneline --graph
+* 1beee55 (HEAD -> master, feature-branch) Add feature.txt on feature-branch
+* a3a0257 Initial commit on master
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp2$ ls
+feature.txt  mainfile.txt
 ```
 
-### **Execution Screenshot**
+### **Execution Screenshot:**
 <div align="center">
-  <img src="screenshots/exp02_creating_managing_branches.png" alt="Experiment 2: Creating and Managing Branches" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+  <img src="screenshots/exp2.png" alt="Experiment 2 Execution" width="900px" style="border:1px solid #555; border-radius:6px;"/>
 </div>
-
-### **Outcome & Inference**
-Successfully created feature-branch, added and committed feature.txt, switched to master, and performed a clean fast-forward merge into master.
 
 ---
 
-## **Experiment 3: Branch Stashing**
+## **Experiment 3. Stashing Changes**
 
-### **Aim**
-To temporarily shelve (stash) uncommitted working directory changes, switch branches with a clean working tree, and restore stashed changes.
+### **Aim / Problem Statement:**
+Write the commands to stash uncommitted modifications in the current branch, switch branches, switch back, and re-apply the stashed modifications.
 
-### **Commands**
-```bash
-git status
-echo "// WIP: uncompleted payment gateway logic" >> mainfile.txt
-git status
-git stash push -m "WIP: uncompleted payment module"
-git status
-git stash list
-git checkout feature-branch
-git checkout master
-git stash pop
-git status
-```
+### **Theoretical Concept:**
+`git stash` temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. This is essential when urgent hotfixes or task switches are needed before completing an in-progress feature.
 
-### **Terminal Output**
+---
+
+### **Step-by-Step Procedure:**
+
+#### **Step 1: Create a separate directory for the experiment**
+$ mkdir exp3
+
+#### **Step 2: Navigate into the directory**
+$ cd exp3
+
+#### **Step 3: Initialize the Git repository**
+$ git init
+
+#### **Step 4: Switch to master and make a base commit**
+$ git checkout -b master
+$ echo "Base code for application" > app.txt
+$ git add app.txt
+$ git commit -m "Base commit"
+
+#### **Step 5: Create a secondary branch for hotfixes**
+$ git branch bugfix-branch
+
+#### **Step 6: Make uncommitted, experimental changes in the working directory**
+$ echo "Underconstruction draft code..." >> app.txt
+
+#### **Step 7: Check working tree status to observe dirty state**
+$ git status
+
+#### **Step 8: Stash uncommitted changes onto the stash stack**
+$ git stash
+
+#### **Step 9: Switch to the bugfix branch with a clean working tree**
+$ git checkout bugfix-branch
+
+#### **Step 10: Switch back to master**
+$ git checkout master
+
+#### **Step 11: Re-apply the stashed modifications**
+$ git stash apply
+
+#### **Step 12: Verify that modifications are restored**
+$ git status
+$ cat app.txt
+
+---
+
+### **Terminal Output:**
 ```text
-Saved working directory and index state On master: WIP: uncompleted payment module
-On branch master
-nothing to commit, working tree clean
-stash@{0}: On master: WIP: uncompleted payment module
-Switched to branch 'feature-branch'
-Switched to branch 'master'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ mkdir exp3
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ cd exp3
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git init
+Initialized empty Git repository in /home/skandakn1BI25CS252/skanda252/exp3/.git/
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git checkout -b master
+Switched to a new branch 'master'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ echo "Base code for application" > app.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git add app.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git commit -m "Base commit"
+[master (root-commit) 6275f3f] Base commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 app.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git branch bugfix-branch
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ echo "Underconstruction draft code..." >> app.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git status
 On branch master
 Changes not staged for commit:
-	modified:   mainfile.txt
-Dropped refs/stash@{0} (e3b8a104f7623910cb45920)
+	modified:   app.txt
+no changes added to commit (use "git add" and/or "git commit -a")
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git stash
+Saved working directory and index state WIP on master: 6275f3f Base commit
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git checkout bugfix-branch
+Switched to branch 'bugfix-branch'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git checkout master
+Switched to branch 'master'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ git stash apply
+On branch master
+Changes not staged for commit:
+	modified:   app.txt
+no changes added to commit (use "git add" and/or "git commit -a")
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp3$ cat app.txt
+Base code for application
+Underconstruction draft code...
 ```
 
-### **Execution Screenshot**
+### **Execution Screenshot:**
 <div align="center">
-  <img src="screenshots/exp03_branch_stashing.png" alt="Experiment 3: Branch Stashing" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+  <img src="screenshots/exp3.png" alt="Experiment 3 Execution" width="900px" style="border:1px solid #555; border-radius:6px;"/>
 </div>
-
-### **Outcome & Inference**
-Successfully saved in-progress modifications onto the Git stash stack and cleanly restored them back to the working directory without losing data.
 
 ---
 
-## **Experiment 4: Collaboration and Remote Repositories (Cloning)**
+## **Experiment 4. Collaboration and Remote Repositories (Cloning)**
 
-### **Aim**
-To clone a remote Git repository from GitHub to the local machine, inspect remote tracking references, and verify local commit history.
+### **Aim / Problem Statement:**
+Clone an existing remote Git repository from GitHub to your local machine, inspect remote bindings, and examine the historical commit log.
 
-### **Commands**
-```bash
-cd ..
-git clone https://github.com/skandakn/BCS358C-Project-Management-with-Git.git
-cd BCS358C-Project-Management-with-Git
-git remote -v
-git branch -a
-git log --oneline -n 2
-```
+### **Theoretical Concept:**
+`git clone` downloads an existing remote Git repository onto the local machine. It automatically sets up remote-tracking branches (`origin/master`) and creates an `origin` remote pointing back to the cloned URL.
 
-### **Terminal Output**
+---
+
+### **Step-by-Step Procedure:**
+
+#### **Step 1: Create a separate directory for the experiment**
+$ mkdir exp4
+
+#### **Step 2: Navigate into the directory**
+$ cd exp4
+
+#### **Step 3: Initialize the Git repository**
+$ git init
+
+#### **Step 4: Clone the remote repository from GitHub**
+$ git clone https://github.com/skandaknbit/BCS358C-Project-Management-with-Git.git
+
+#### **Step 5: Inspect directory structure of the cloned repository**
+$ tree BCS358C-Project-Management-with-Git
+
+#### **Step 6: Enter the cloned project folder**
+$ cd BCS358C-Project-Management-with-Git
+
+#### **Step 7: Verify remote repository connection and URLs**
+$ git remote -v
+
+#### **Step 8: View the last 5 commits from the cloned history**
+$ git log --oneline -5
+
+---
+
+### **Terminal Output:**
 ```text
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ mkdir exp4
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ cd exp4
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp4$ git init
+Initialized empty Git repository in /home/skandakn1BI25CS252/skanda252/exp4/.git/
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp4$ git clone https://github.com/skandaknbit/BCS358C-Project-Management-with-Git.git
 Cloning into 'BCS358C-Project-Management-with-Git'...
-remote: Enumerating objects: 15, done.
-remote: Counting objects: 100% (15/15), done.
-remote: Compressing objects: 100% (12/12), done.
-remote: Total 15 (delta 2), reused 15 (delta 2), pack-reused 0
-Receiving objects: 100% (15/15), 4.20 KiB | 4.20 MiB/s, done.
-Resolving deltas: 100% (2/2), done.
-origin  https://github.com/skandakn/BCS358C-Project-Management-with-Git.git (fetch)
-origin  https://github.com/skandakn/BCS358C-Project-Management-with-Git.git (push)
-* master
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
-537ebae (HEAD -> master, origin/master) add feature.txt to feature-branch
-a11b28b Initial commit on master
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 13 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (13/13), 363.79 KiB | 2.84 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp4$ tree BCS358C-Project-Management-with-Git
+BCS358C-Project-Management-with-Git
+├── GIT_WEEK7
+├── LAB_PROGRAM7.pdf
+├── README.md
+├── Rebase.docx
+└── week_6.pdf
+2 directories, 4 files
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp4$ cd BCS358C-Project-Management-with-Git
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp4/BCS358C-Project-Management-with-Git$ git remote -v
+origin  https://github.com/skandaknbit/BCS358C-Project-Management-with-Git.git (fetch)
+origin  https://github.com/skandaknbit/BCS358C-Project-Management-with-Git.git (push)
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp4/BCS358C-Project-Management-with-Git$ git log --oneline -5
+911865d (HEAD -> master, origin/master, origin/HEAD) Add files via upload
+eefdd89 Add files via upload
+2188199 Update README with author name Skanda K N (1BI25CS252)
+494fccf Initial commit
 ```
 
-### **Execution Screenshot**
+### **Execution Screenshot:**
 <div align="center">
-  <img src="screenshots/exp04_git_clone_remote.png" alt="Experiment 4: Collaboration and Remote Repositories (Cloning)" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+  <img src="screenshots/exp4.png" alt="Experiment 4 Execution" width="900px" style="border:1px solid #555; border-radius:6px;"/>
 </div>
-
-### **Outcome & Inference**
-Cloned the remote repository from GitHub, verified the origin URL mappings, and confirmed all remote branches and commit histories are synchronized locally.
 
 ---
 
-## **Experiment 5: Remote Repositories (Creation and Linking)**
+## **Experiment 5. Fetching and Rebasing**
 
-### **Aim**
-To link a local repository to a remote repository on GitHub using 'git remote add' and push commits upstream.
+### **Aim / Problem Statement:**
+Fetch the latest changes from the remote repository and rebase your local branch onto the updated base branch to maintain a clean, linear commit history.
 
-### **Commands**
-```bash
-git remote add origin https://github.com/skandakn/BCS358C-Project-Management-with-Git.git
-git remote -v
-git branch -M master
-git push -u origin master
-git status
-```
-
-### **Terminal Output**
-```text
-origin  https://github.com/skandakn/BCS358C-Project-Management-with-Git.git (fetch)
-origin  https://github.com/skandakn/BCS358C-Project-Management-with-Git.git (push)
-Enumerating objects: 9, done.
-Counting objects: 100% (9/9), done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 1.25 KiB | 1.25 MiB/s, done.
-To https://github.com/skandakn/BCS358C-Project-Management-with-Git.git
- * [new branch]      master -> master
-branch 'master' set up to track 'origin/master'.
-On branch master
-Your branch is up to date with 'origin/master'.
-nothing to commit, working tree clean
-```
-
-### **Execution Screenshot**
-<div align="center">
-  <img src="screenshots/exp05_remote_repo_push.png" alt="Experiment 5: Remote Repositories (Creation and Linking)" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-</div>
-
-### **Outcome & Inference**
-Successfully configured origin remote tracking and published local master branch commits to GitHub.
+### **Theoretical Concept:**
+* `git fetch` retrieves commits, references, and files from a remote repository without altering local working branches.
+* `git rebase` reapplies commits from one branch on top of another. Unlike merging (which introduces a non-linear merge commit), rebasing produces a completely streamlined, linear timeline of commits.
 
 ---
 
-## **Experiment 6: Fetching and Rebasing**
+### **Step-by-Step Procedure:**
 
-### **Aim**
-To fetch latest commits from a remote repository and rebase a feature branch onto the updated upstream branch to maintain a linear commit history.
+#### **Step 1: Create a separate directory for the experiment**
+$ mkdir exp5
 
-### **Commands**
-```bash
-git checkout feature-branch
-git fetch origin
-git rebase origin/master
-git log --oneline --graph --decorate -n 3
-git status
-```
+#### **Step 2: Navigate into the directory**
+$ cd exp5
 
-### **Terminal Output**
-```text
-Switched to branch 'feature-branch'
-remote: Enumerating objects: 5, done.
-From https://github.com/skandakn/BCS358C-Project-Management-with-Git
-   537ebae..e4a29c1  master     -> origin/master
-Successfully rebased and updated refs/heads/feature-branch.
-* e4a29c1 (HEAD -> feature-branch, origin/master) update project structure
-* 537ebae (master) add feature.txt to feature-branch
-* a11b28b Initial commit on master
-On branch feature-branch
-nothing to commit, working tree clean
-```
+#### **Step 3: Initialize the Git repository**
+$ git init
 
-### **Execution Screenshot**
-<div align="center">
-  <img src="screenshots/exp06_fetching_and_rebasing.png" alt="Experiment 6: Fetching and Rebasing" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-</div>
+#### **Step 4: Create root commit on baseline branch**
+$ echo "1st commit" > README.md
+$ git add .
+$ git commit -m "1st"
 
-### **Outcome & Inference**
-Fetched upstream updates and rebased feature-branch onto origin/master, producing a streamlined linear git commit graph.
+#### **Step 5: Create and checkout feature branch**
+$ git checkout -b feature
+$ echo "branch commit" > README.md
+$ git add .
+$ git commit -m "2nd"
+
+#### **Step 6: Switch to master and make an independent commit**
+$ git checkout -b master
+$ echo "Master commit" > master.txt
+$ git add .
+$ git commit -m "3rd"
+
+#### **Step 7: Switch back to feature branch**
+$ git checkout feature
+
+#### **Step 8: Rebase feature branch on top of master**
+$ git rebase master
+
+#### **Step 9: Inspect the linear commit graph**
+$ git log --oneline --graph
 
 ---
 
-## **Experiment 7: Merging with Custom Messages**
-
-### **Aim**
-To merge a feature branch into master using a non-fast-forward merge and specify an informative custom merge commit message.
-
-### **Commands**
-```bash
-git checkout master
-git merge --no-ff feature-branch -m "Custom merge: Integrate feature-branch into master after testing"
-git log --oneline --graph -n 4
+### **Terminal Output:**
+```text
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ mkdir exp5
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ cd exp5
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git init
+Initialized empty Git repository in /home/skandakn1BI25CS252/skanda252/exp5/.git/
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ echo "1st commit" > README.md
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git add .
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git commit -m "1st"
+[main (root-commit) 73dbd2d] 1st
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git checkout -b feature
+Switched to a new branch 'feature'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ echo "branch commit" > README.md
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git add .
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git commit -m "2nd"
+[feature a7ef8ae] 2nd
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git checkout -b master
+Switched to a new branch 'master'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ echo "Master commit" > master.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git add .
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git commit -m "3rd"
+[master 81c4e92] 3rd
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git checkout feature
+Switched to branch 'feature'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git rebase master
+Successfully rebased and updated refs/heads/feature.
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp5$ git log --oneline --graph
+* 81c4e92 (HEAD -> feature, master) 3rd
+* a7ef8ae 2nd
+* 73dbd2d (main) 1st
 ```
 
-### **Terminal Output**
+### **Execution Screenshot:**
+<div align="center">
+  <img src="screenshots/exp5.png" alt="Experiment 5 Execution" width="900px" style="border:1px solid #555; border-radius:6px;"/>
+</div>
+
+---
+
+## **Experiment 6. Collaboration and Merging with Custom Commit Messages**
+
+### **Aim / Problem Statement:**
+Write the command to merge "feature-branch" into "master" while providing an informative custom commit message for the merge.
+
+### **Theoretical Concept:**
+By default, Git auto-generates a generic message such as `Merge branch 'feature-branch'`. Supplying the `--no-ff` flag forces Git to create an explicit merge commit with its own SHA hash, and `-m "<message>"` allows engineers to provide rigorous documentation for compliance and team auditing.
+
+---
+
+### **Step-by-Step Procedure:**
+
+#### **Step 1: Create a separate directory for the experiment**
+$ mkdir exp6
+
+#### **Step 2: Navigate into the directory**
+$ cd exp6
+
+#### **Step 3: Initialize the Git repository**
+$ git init
+
+#### **Step 4: Switch to master and create a project baseline**
+$ git checkout -b master
+$ echo "Project baseline structure" > index.html
+$ git add index.html
+$ git commit -m "Initial commit"
+
+#### **Step 5: Create and checkout feature-branch**
+$ git checkout -b feature-branch
+
+#### **Step 6: Develop authentication module on feature branch**
+$ echo "Adding user authentication module" > auth.js
+$ git add auth.js
+$ git commit -m "Add authentication module"
+
+#### **Step 7: Switch back to master branch**
+$ git checkout master
+
+#### **Step 8: Perform non-fast-forward merge with a custom message**
+$ git merge feature-branch --no-ff -m "merge branch"
+
+#### **Step 9: View the commit graph showing the explicit merge node**
+$ git log --oneline --graph
+
+---
+
+### **Terminal Output:**
 ```text
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ mkdir exp6
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ cd exp6
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git init
+Initialized empty Git repository in /home/skandakn1BI25CS252/skanda252/exp6/.git/
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git checkout -b master
+Switched to a new branch 'master'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ echo "Project baseline structure" > index.html
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git add index.html
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git commit -m "Initial commit"
+[master (root-commit) 6c2e6a6] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ echo "Adding user authentication module" > auth.js
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git add auth.js
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git commit -m "Add authentication module"
+[feature-branch 057c83f] Add authentication module
+ 1 file changed, 1 insertion(+)
+ create mode 100644 auth.js
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git checkout master
 Switched to branch 'master'
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git merge feature-branch --no-ff -m "merge branch"
 Merge made by the 'ort' strategy.
- feature.txt | 2 ++
- 1 file changed, 2 insertions(+)
-*   9d82f10 (HEAD -> master) Custom merge: Integrate feature-branch into master after testing
+ auth.js | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 auth.js
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp6$ git log --oneline --graph
+*   2dc461c (HEAD -> master) merge branch
 |\  
-| * 537ebae (feature-branch) add feature.txt to feature-branch
+| * 057c83f (feature-branch) Add authentication module
 |/  
-* a11b28b Initial commit on master
+* 6c2e6a6 Initial commit
 ```
 
-### **Execution Screenshot**
+### **Execution Screenshot:**
 <div align="center">
-  <img src="screenshots/exp07_merging_custom_messages.png" alt="Experiment 7: Merging with Custom Messages" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+  <img src="screenshots/exp6.png" alt="Experiment 6 Execution" width="900px" style="border:1px solid #555; border-radius:6px;"/>
 </div>
-
-### **Outcome & Inference**
-Created an explicit non-fast-forward merge commit containing custom documentation of feature integration.
 
 ---
 
-## **Experiment 8: Git Tags and Releases**
+## **Experiment 7. Git Tags and Releases**
 
-### **Aim**
-To create both lightweight and annotated Git tags (v1.0) marking software release milestones and inspect tag metadata.
+### **Aim / Problem Statement:**
+Write the command to create a lightweight Git tag named "v1.0" for a commit in your local repository.
 
-### **Commands**
-```bash
-git tag v1.0-lightweight
-git tag -a v1.0 -m "Release v1.0: First stable release with core feature set"
-git tag -l
-git show v1.0
-```
+### **Theoretical Concept:**
+A Git Tag is an immutable reference used to mark a specific point in a repository's history, typically release milestones (e.g., `v1.0`, `v2.0`).
+* **Lightweight Tag:** A simple pointer to a specific commit. Does not contain author metadata or separate messages.
+  * *Syntax:* `git tag v1.0`
+* **Annotated Tag:** Stored as full objects in the Git database containing tagger name, email, date, and verification message.
+  * *Syntax:* `git tag -a v1.0 -m "Release v1.0"`
 
-### **Terminal Output**
+---
+
+### **Step-by-Step Procedure (As per Official Lab Manual):**
+
+#### **Step 1: Create a separate directory for the experiment**
+$ mkdir exp7
+
+#### **Step 2: Navigate into the directory**
+$ cd exp7
+
+#### **Step 3: Initialize the Git repository**
+$ git init
+
+#### **Step 4: Configure user credentials**
+$ git config --global user.name "Skanda K N (1BI25CS252)"
+$ git config --global user.email "skandakn13@gmail.com"
+
+#### **Step 5: Verify configuration settings**
+$ git config --list
+
+#### **Step 6: Create the first file**
+$ echo "Hello, I'm Skanda K N (1BI25CS252)" >> file1.txt
+$ cat file1.txt
+
+#### **Step 7: Add and commit the first file**
+$ git add file1.txt
+$ git commit -m "1st commit"
+
+#### **Step 8: Create the second file**
+$ echo "Skanda is from BIT (1BI25CS252)" >> file2.txt
+$ cat file2.txt
+
+#### **Step 9: Add and commit the second file**
+$ git add file2.txt
+$ git commit -m "2nd commit"
+
+#### **Step 10: View the chronological commit log**
+$ git log --oneline
+
+#### **Step 11: Create a lightweight Git tag**
+$ git tag v1.0
+
+#### **Step 12: Verify the tag creation**
+$ git tag
+
+#### **Step 13: View the details of the tagged commit**
+$ git show v1.0
+
+#### **Step 14: Connect the local repository to GitHub**
+$ git remote add origin https://github.com/skandaknbit/trial.git
+
+#### **Step 15: Push commits and release tags to GitHub**
+$ git branch -M main
+$ git push -u origin main
+$ git push origin v1.0
+
+---
+
+### **Terminal Output:**
 ```text
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ mkdir exp7
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252$ cd exp7
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git init
+Initialized empty Git repository in /home/skandakn1BI25CS252/skanda252/exp7/.git/
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git config --global user.name "Skanda K N (1BI25CS252)"
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git config --global user.email "skandakn13@gmail.com"
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git config --list
+user.name=Skanda K N (1BI25CS252)
+user.email=skandakn13@gmail.com
+advice.defaultbranchname=false
+init.defaultbranch=main
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ echo "Hello, I'm Skanda K N (1BI25CS252)" >> file1.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ cat file1.txt
+Hello, I'm Skanda K N (1BI25CS252)
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git add file1.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git commit -m "1st commit"
+[main (root-commit) dd3fb60] 1st commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ echo "Skanda is from BIT (1BI25CS252)" >> file2.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ cat file2.txt
+Skanda is from BIT (1BI25CS252)
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git add file2.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git commit -m "2nd commit"
+[main 6509252] 2nd commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git log --oneline
+6509252 (HEAD -> main) 2nd commit
+dd3fb60 1st commit
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git tag v1.0
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git tag
 v1.0
-v1.0-lightweight
-tag v1.0
-Tagger: Skanda K N <skandakn13@gmail.com>
-Date:   Wed Nov 5 10:15:20 2026 +0530
+skandakn1BI25CS252@1BI25CS252-Skanda:~/skanda252/exp7$ git show v1.0
+commit 6509252a4702e52534abee58ccaa28eeccf35a89 (HEAD -> main, tag: v1.0)
+Author: Skanda K N (1BI25CS252) <skandakn13@gmail.com>
+Date:   Tue Nov 10 13:26:15 2026 +0530
 
-Release v1.0: First stable release with core feature set
+    2nd commit
 
-commit 9d82f10 (HEAD -> master, tag: v1.0, tag: v1.0-lightweight)
-Author: Skanda K N <skandakn13@gmail.com>
-Date:   Wed Nov 5 10:12:00 2026 +0530
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..23b0826
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1 @@
++Skanda is from BIT (1BI25CS252)
 ```
 
-### **Execution Screenshot**
+### **Execution Screenshot:**
 <div align="center">
-  <img src="screenshots/exp08_git_tags_releases.png" alt="Experiment 8: Git Tags and Releases" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+  <img src="screenshots/exp7.png" alt="Experiment 7 Execution" width="900px" style="border:1px solid #555; border-radius:6px;"/>
 </div>
 
-### **Outcome & Inference**
-Tagged the release commit with annotated version v1.0 and inspected tag verification details.
-
 ---
 
-## **Experiment 9: Advanced Git Operations (Cherry-Picking)**
+### **Git Tag Operations Reference Guide (Page 5 Table):**
 
-### **Aim**
-To selectively pick and apply a specific commit from a separate development branch onto the current master branch using 'git cherry-pick'.
-
-### **Commands**
-```bash
-git checkout -b patch-branch
-echo "SECURITY_PATCH=ENABLED" > security_patch.txt
-git add security_patch.txt
-git commit -m "fix(security): apply critical buffer patch"
-git checkout master
-git cherry-pick c4e8a12
-git log --oneline -n 2
-```
-
-### **Terminal Output**
-```text
-Switched to a new branch 'patch-branch'
-[patch-branch c4e8a12] fix(security): apply critical buffer patch
- 1 file changed, 1 insertion(+)
- create mode 100644 security_patch.txt
-Switched to branch 'master'
-[master f1b903e] fix(security): apply critical buffer patch
- Date: Wed Nov 5 10:22:15 2026 +0530
- 1 file changed, 1 insertion(+)
- create mode 100644 security_patch.txt
-f1b903e (HEAD -> master) fix(security): apply critical buffer patch
-9d82f10 (tag: v1.0) Custom merge: Integrate feature-branch into master
-```
-
-### **Execution Screenshot**
-<div align="center">
-  <img src="screenshots/exp09_cherry_picking.png" alt="Experiment 9: Advanced Git Operations (Cherry-Picking)" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-</div>
-
-### **Outcome & Inference**
-Successfully ported a critical security patch commit from patch-branch directly onto master branch without merging unnecessary intermediate commits.
+| Action | Command | Description |
+|:---|:---|:---|
+| **List all tags** | `git tag` | Displays all available tags in the repository. |
+| **Create a lightweight tag** | `git tag <tag-name>` | Creates a lightweight tag pointing to current commit. |
+| **Create an annotated tag** | `git tag -a <tag-name> -m "<message>"` | Creates an annotated tag with message and tagger metadata. |
+| **Create a tag for specific commit** | `git tag <tag-name> <commit-id>` | Creates a tag pointing to a specific commit SHA. |
+| **Display tag details** | `git show <tag-name>` | Displays metadata and diff associated with the tag. |
+| **Search tags** | `git tag -l "<pattern>"` | Lists tags matching the specified regex/glob pattern. |
+| **Delete local tag** | `git tag -d <tag-name>` | Deletes the tag reference from local repository. |
+| **Push specific tag to remote** | `git push origin <tag-name>` | Publishes the specified tag to GitHub remote. |
+| **Push all tags to remote** | `git push origin --tags` | Pushes all local tags to GitHub remote. |
+| **Fetch remote tags** | `git fetch --tags` | Downloads tags from the remote repository. |
+| **Delete remote tag** | `git push origin --delete <tag-name>` | Removes the tag from remote GitHub server. |
 
 ---
-
-## **Experiment 10: Analyzing Git History (Filtering by Author and Date)**
-
-### **Aim**
-To query, filter, and inspect commit history based on specific author identity and defined date ranges.
-
-### **Commands**
-```bash
-git log --author="Skanda" --since="2026-10-01" --until="2026-11-05" --oneline
-git log --author="Skanda" --stat -n 2
-```
-
-### **Terminal Output**
-```text
-f1b903e (HEAD -> master) fix(security): apply critical buffer patch
-9d82f10 (tag: v1.0) Custom merge: Integrate feature-branch into master
-537ebae (feature-branch) add feature.txt to feature-branch
-a11b28b Initial commit on master
-cb9e758 1st commit: add myfile.txt
-commit f1b903e082ef7401d683a4c0
-Author: Skanda K N <skandakn13@gmail.com>
-Date:   Wed Nov 5 10:22:15 2026 +0530
-
-    fix(security): apply critical buffer patch
-
- security_patch.txt | 1 +
- 1 file changed, 1 insertion(+)
-```
-
-### **Execution Screenshot**
-<div align="center">
-  <img src="screenshots/exp10_analyzing_git_history_author_date.png" alt="Experiment 10: Analyzing Git History (Filtering by Author and Date)" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-</div>
-
-### **Outcome & Inference**
-Filtered commit history precisely by author name and date boundaries, demonstrating repository auditing capabilities.
-
----
-
-## **Experiment 11: Analyzing Git History (Displaying Last N Commits)**
-
-### **Aim**
-To format and restrict Git history output to display a specific number (N=5) of recent commits.
-
-### **Commands**
-```bash
-git log -n 5
-git log -5 --oneline --graph --decorate
-```
-
-### **Terminal Output**
-```text
-commit f1b903e4812a6104bcde2031 (HEAD -> master)
-Author: Skanda K N <skandakn13@gmail.com>
-Date:   Wed Nov 5 10:22:15 2026 +0530
-    fix(security): apply critical buffer patch
-commit 9d82f10a827419ef01bc8392 (tag: v1.0)
-Author: Skanda K N <skandakn13@gmail.com>
-Date:   Wed Nov 5 10:12:00 2026 +0530
-    Custom merge: Integrate feature-branch into master after testing
-commit 537ebae2948b812fcc740192 (feature-branch)
-Author: Skanda K N <skandakn13@gmail.com>
-Date:   Wed Nov 5 09:45:00 2026 +0530
-    add feature.txt to feature-branch
-
-* f1b903e (HEAD -> master) fix(security): apply critical buffer patch
-*   9d82f10 (tag: v1.0) Custom merge: Integrate feature-branch into master
-|\  
-| * 537ebae (feature-branch) add feature.txt to feature-branch
-|/  
-* a11b28b Initial commit on master
-* cb9e758 1st commit: add myfile.txt
-```
-
-### **Execution Screenshot**
-<div align="center">
-  <img src="screenshots/exp11_analyzing_git_history_last_n_commits.png" alt="Experiment 11: Analyzing Git History (Displaying Last N Commits)" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-</div>
-
-### **Outcome & Inference**
-Successfully retrieved formatted summary of the latest 5 commits across all branch tips.
-
----
-
-## **Experiment 12: Undoing Changes and Reverting Commits**
-
-### **Aim**
-To safely undo changes introduced by a specific prior commit by creating an inverse commit with 'git revert'.
-
-### **Commands**
-```bash
-git log --oneline -n 2
-git revert f1b903e --no-edit
-git log --oneline -n 3
-git status
-```
-
-### **Terminal Output**
-```text
-f1b903e (HEAD -> master) fix(security): apply critical buffer patch
-9d82f10 (tag: v1.0) Custom merge: Integrate feature-branch into master
-[master 8c291d4] Revert "fix(security): apply critical buffer patch"
- 1 file changed, 1 deletion(-)
- delete mode 100644 security_patch.txt
-8c291d4 (HEAD -> master) Revert "fix(security): apply critical buffer patch"
-f1b903e fix(security): apply critical buffer patch
-9d82f10 (tag: v1.0) Custom merge: Integrate feature-branch into master
-On branch master
-nothing to commit, working tree clean
-```
-
-### **Execution Screenshot**
-<div align="center">
-  <img src="screenshots/exp12_undoing_changes_reverting_commits.png" alt="Experiment 12: Undoing Changes and Reverting Commits" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-</div>
-
-### **Outcome & Inference**
-Successfully reverted commit f1b903e without rewriting project history, demonstrating safe rollback procedures.
-
----
-
-## **Experiment 13 (Bonus): Collaborative Merge Conflict Resolution**
-
-### **Aim**
-To simulate concurrent branch edits on the same file lines, identify conflict markers, resolve differences manually, and complete the merge commit.
-
-### **Commands**
-```bash
-git checkout -b dev-branch
-echo "DATABASE_URL=postgres://localhost:5432/vtu_db" > config.env
-git commit -am "Configure database url for dev"
-git checkout master
-echo "DATABASE_URL=mysql://prod-server:3306/vtu_prod" > config.env
-git commit -am "Configure database url for prod on master"
-git merge dev-branch
-git status
-git add config.env && git commit -m "Resolve merge conflict in config.env"
-```
-
-### **Terminal Output**
-```text
-Switched to a new branch 'dev-branch'
-[dev-branch 2a19b8c] Configure database url for dev
-Switched to branch 'master'
-[master b84f10a] Configure database url for prod on master
-Auto-merging config.env
-CONFLICT (content): Merge conflict in config.env
-Automatic merge failed; fix conflicts and then commit the result.
-You have unmerged paths. (fix conflicts and run "git commit")
-Unmerged paths:
-	both modified:   config.env
-[master 7d49e12] Resolve merge conflict in config.env
-```
-
-### **Execution Screenshot**
-<div align="center">
-  <img src="screenshots/exp13_merge_conflict_resolution.png" alt="Experiment 13 (Bonus): Collaborative Merge Conflict Resolution" width="850px" style="border: 1px solid #444; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-</div>
-
-### **Outcome & Inference**
-Triggered and resolved a real-world merge conflict manually, finalized the merge commit, and verified repo consistency.
-
----
-
-## **How to Clone & Run Locally**
-```bash
-# Clone the repository
-git clone https://github.com/skandakn/BCS358C-Project-Management-with-Git.git
-cd BCS358C-Project-Management-with-Git
-
-# Make all experiment scripts executable
-chmod +x experiments/*/commands.sh
-```
-
----
-*Maintained by Skanda K N | Bangalore Institute of Technology (BIT)*
+*Prepared and Maintained by Skanda K N (USN: 1BI25CS252) | Department of CSE, BIT Bangalore*
