@@ -23,7 +23,7 @@
 | **2** | Creating and Managing Branches | `exp2/` | [exp2.png](screenshots/exp2.png) |
 | **3** | Stashing Changes | `exp3/` | [exp3.png](screenshots/exp3.png) |
 | **4** | Collaboration & Remote Repositories (Cloning) | `exp4/` | [exp4.png](screenshots/exp4.png) |
-| **5** | Fetching and Rebasing | `exp5.1/` | [exp5.png](screenshots/exp5.png) |
+| **5** | Fetching and Rebasing | `exp5/` | [exp5.png](screenshots/exp5.png) |
 | **6** | Collaboration & Merging with Custom Commit Messages | `exp6/` | [exp6.png](screenshots/exp6.png) |
 | **7** | Git Tags and Releases | `exp7/` | [exp7.png](screenshots/exp7.png) |
 
@@ -296,7 +296,7 @@ Implement branch rebasing by committing changes on a feature branch, making inde
 Rebasing in Git rewrites commit history by moving a sequence of commits to a new base commit. While a standard merge creates a new merge commit connecting two diverging histories, `git rebase` replays feature branch commits one by one on top of the target base branch, maintaining a clean, linear project history.
 
 ### **Step-by-Step Procedure:**
-1. Create and enter workspace: `mkdir exp5.1 && cd exp5.1 && git init`
+1. Create and enter workspace: `mkdir exp5 && cd exp5 && git init`
 2. Make initial commit on main:
    - `echo "1st commit" > README.md`
    - `git add . && git commit -m "1st"`
@@ -315,36 +315,36 @@ Rebasing in Git rewrites commit history by moving a sequence of commits to a new
 
 ### **Terminal Output:**
 ```text
-skandakn252@1BI25CS252:~/skandakn252$ mkdir exp5.1
-skandakn252@1BI25CS252:~/skandakn252$ cd exp5.1
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git init
-Initialized empty Git repository in /home/skandakn252/skandakn252/exp5.1/.git/
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ echo "1st commit" > README.md
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git add .
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git commit -m "1st"
+skandakn252@1BI25CS252:~/skandakn252$ mkdir exp5
+skandakn252@1BI25CS252:~/skandakn252$ cd exp5
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git init
+Initialized empty Git repository in /home/skandakn252/skandakn252/exp5/.git/
+skandakn252@1BI25CS252:~/skandakn252/exp5$ echo "1st commit" > README.md
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git add .
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git commit -m "1st"
 [main (root-commit) 73dbd2d] 1st
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git checkout -b feature
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git checkout -b feature
 Switched to a new branch 'feature'
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ echo "branch commit" > README.md
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git add .
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git commit -m "2nd"
+skandakn252@1BI25CS252:~/skandakn252/exp5$ echo "branch commit" > README.md
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git add .
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git commit -m "2nd"
 [feature a7ef8ae] 2nd
  1 file changed, 1 insertion(+), 1 deletion(-)
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git checkout -b master
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git checkout -b master
 Switched to a new branch 'master'
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ echo "Master commit" > master.txt
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git add .
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git commit -m "3rd"
+skandakn252@1BI25CS252:~/skandakn252/exp5$ echo "Master commit" > master.txt
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git add .
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git commit -m "3rd"
 [master 81c4e92] 3rd
  1 file changed, 1 insertion(+)
  create mode 100644 master.txt
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git checkout feature
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git checkout feature
 Switched to branch 'feature'
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git rebase master
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git rebase master
 Successfully rebased and updated refs/heads/feature.
-skandakn252@1BI25CS252:~/skandakn252/exp5.1$ git log --oneline --graph
+skandakn252@1BI25CS252:~/skandakn252/exp5$ git log --oneline --graph
 * 81c4e92 (HEAD -> feature, master) 3rd
 * a7ef8ae 2nd
 * 73dbd2d (main) 1st
