@@ -1,10 +1,5 @@
-# OS generated files
+*.docx
+*.pdf
+*.zip
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# Temporary and editor files
-*.tmp
-*~
-*.swp
-*.bak
